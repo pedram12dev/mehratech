@@ -11,3 +11,6 @@ migrations/
 .vscode/
 .DS_Store
 venv/
+static/
+media/
+staticfiles/
