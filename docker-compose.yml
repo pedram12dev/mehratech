@@ -7,13 +7,15 @@ services:
         volumes:
             - ./backend:/code/backend
             - static_files:/code/backend/staticfiles
+            - ./media:/code/backend/media
         ports:
             - "8000:8000"
         networks:
             - main
 
         command: >
-          sh -c "python manage.py migrate &&
+          sh -c "python manage.py makemigrations &&
+                python manage.py migrate &&
                 python manage.py collectstatic --noinput &&
                 gunicorn mehratech.wsgi:application --bind 0.0.0.0:8000"
         restart: on-failure
@@ -43,6 +45,7 @@ services:
         volumes:
             - ./nginx/default.conf:/etc/nginx/conf.d/default.conf  
             - static_files:/code/backend/staticfiles
+            - ./media:/code/backend/media
             # - ./frontend/build:/app/frontend_build  
         ports:
             - "80:80"
