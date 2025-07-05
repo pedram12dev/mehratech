@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'blog.apps.BlogConfig',
     'home.apps.HomeConfig',
+    'employees.apps.EmployeesConfig',
 
 
     # third-party apps
