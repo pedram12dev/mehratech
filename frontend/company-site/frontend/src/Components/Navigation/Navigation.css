@@ -1,0 +1,32 @@
+.navigation {
+  background-color: #f8f8f8;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+  direction: rtl;
+}
+
+.navigation ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: normal;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.navigation li a:hover {
+  color: #007bff;
+}
+
+.navigation li a.active {
+  font-weight: bold;
+  border-bottom: 2px solid #007bff;
+  color: #007bff;
+}
